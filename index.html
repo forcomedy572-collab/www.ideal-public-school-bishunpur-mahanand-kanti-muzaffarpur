@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Public School - Muzaffarpur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a5490 0%, #2e7cb8 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-section h1 {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .logo-section p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-info p {
+            font-size: 0.9rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #0d3957;
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.2rem;
+            display: inline-block;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 84, 144, 0.7), rgba(46, 124, 184, 0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231a5490" width="1200" height="600"/><circle cx="100" cy="100" r="80" fill="%232e7cb8" opacity="0.5"/><circle cx="1100" cy="500" r="100" fill="%232e7cb8" opacity="0.5"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            background-color: #ffd700;
+            color: #1a5490;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Section */
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #1a5490;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1a5490 0%, #2e7cb8 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+        }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-left: 4px solid #ffd700;
+            border-radius: 4px;
+        }
+
+        .feature h4 {
+            color: #1a5490;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Admission Banner */
+        .admission-banner {
+            background: linear-gradient(135deg, #27ae60 0%, #16a085 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .admission-banner h3 {
+            color: white;
+            border-bottom: 3px solid #f1c40f;
+        }
+
+        .admission-banner p {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+
+        .admission-highlight {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #1a5490;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a5490;
+            box-shadow: 0 0 5px rgba(26, 84, 144, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a5490;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info {
+                text-align: center;
+                margin-top: 1rem;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <h1>🎓 Ideal Public School</h1>
+                <p>Nurturing Tomorrow's Leaders</p>
+            </div>
+            <div class="contact-info">
+                <p>📍 Bishunpur, Mahanand Kanti, Muzaffarpur</p>
+                <p>📞 9934842682</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#facilities">Facilities</a>
+            <a href="#admission">Admission</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Welcome to Ideal Public School</h2>
+        <p>Excellence in Education | Building Confident Citizens</p>
+        <button class="btn" onclick="document.getElementById('admission').scrollIntoView({behavior: 'smooth'});">Admission 2026-27</button>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h3>About Us</h3>
+            <p>Ideal Public School is committed to providing quality education that fosters academic excellence, character development, and overall growth of students. Our dedicated faculty and modern infrastructure ensure a conducive learning environment.</p>
+            
+            <div class="info-cards">
+                <div class="card">
+                    <h4>🏆 Excellence</h4>
+                    <p>Committed to academic and personal excellence</p>
+                </div>
+                <div class="card">
+                    <h4>👨‍🏫 Experienced Faculty</h4>
+                    <p>Highly qualified and dedicated teachers</p>
+                </div>
+                <div class="card">
+                    <h4>🌍 Global Perspective</h4>
+                    <p>Preparing students for a global world</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilities Section -->
+        <section id="facilities">
+            <h3>Our Facilities</h3>
+            <div class="features">
+                <div class="feature">
+                    <h4>📚 Well-Equipped Library</h4>
+                    <p>Extensive collection of books and digital resources</p>
+                </div>
+                <div class="feature">
+                    <h4>🔬 Science Laboratory</h4>
+                    <p>Modern labs for practical learning in Physics, Chemistry & Biology</p>
+                </div>
+                <div class="feature">
+                    <h4>💻 Computer Lab</h4>
+                    <p>Latest technology for digital literacy and coding</p>
+                </div>
+                <div class="feature">
+                    <h4>🔢 Mathematics Lab</h4>
+                    <p>Interactive learning tools for mathematical concepts</p>
+                </div>
+                <div class="feature">
+                    <h4>🗣️ Language Lab</h4>
+                    <p>Audio-visual facilities for English & Hindi language skills</p>
+                </div>
+                <div class="feature">
+                    <h4>⚽ Sports Ground</h4>
+                    <p>Spacious playground for cricket, football, badminton & athletics</p>
+                </div>
+                <div class="feature">
+                    <h4>🎨 Art & Music Room</h4>
+                    <p>Creative spaces for artistic expression and musical training</p>
+                </div>
+                <div class="feature">
+                    <h4>🎭 Auditorium</h4>
+                    <p>Multi-purpose hall for seminars, presentations & cultural programs</p>
+                </div>
+                <div class="feature">
+                    <h4>📖 Reading Room</h4>
+                    <p>Quiet spaces for focused study and research</p>
+                </div>
+                <div class="feature">
+                    <h4>🖥️ Digital Classroom</h4>
+                    <p>Smart classrooms with interactive displays and digital content</p>
+                </div>
+                <div class="feature">
+                    <h4>💬 Discussion Rooms</h4>
+                    <p>Small group learning and collaborative study spaces</p>
+                </div>
+                <div class="feature">
+                    <h4>🍴 Cafeteria</h4>
+                    <p>Nutritious meals and healthy snacks for students</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission Section -->
+        <section id="admission">
+            <h3>Admissions Open</h3>
+            
+            <div class="admission-banner">
+                <h3>🎉 Admission 2026-27 Open Now!</h3>
+                <div class="admission-highlight">💰 Admission Fee: ₹500</div>
+                <p>Classes: Nursery to 8th Standard</p>
+                <p>Limited seats available - Apply Now!</p>
+                <p style="margin-top: 1rem; font-size: 1.2rem; background: rgba(255, 255, 255, 0.3); padding: 1rem; border-radius: 5px;">
+                    📞 <strong>Direct Contact: 9934842682</strong>
+                </p>
+                <button class="btn" style="margin-top: 1rem;" onclick="document.getElementById('admissionForm').scrollIntoView({behavior: 'smooth'});">📝 Apply Now</button>
+            </div>
+
+            <h4 style="color: #1a5490; margin-top: 2rem; text-align: center;">📝 Fill Admission Form Below</h4>
+            <form class="contact-form" id="admissionForm">
+                <div class="form-group">
+                    <label for="student-name">Student Name *</label>
+                    <input type="text" id="student-name" name="student-name" placeholder="Full name of student" required>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="class">Class Applying For *</label>
+                    <input type="text" id="class" name="class" placeholder="e.g., Nursery, Class 1, Class 5, etc." required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name *</label>
+                    <input type="text" id="parent-name" name="parent-name" placeholder="Full name of parent or guardian" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact Number *</label>
+                    <input type="tel" id="contact" name="contact" placeholder="10 digit phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Complete Address *</label>
+                    <textarea id="address" name="address" rows="3" placeholder="Street, City, State, Postal Code" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; text-align: center;">✅ Submit Application</button>
+            </form>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h3>Contact Us</h3>
+            <div class="info-cards">
+                <div class="card">
+                    <h4>📍 Address</h4>
+                    <p>Bishunpur, Mahanand Kanti<br>Muzaffarpur, Bihar</p>
+                </div>
+                <div class="card">
+                    <h4>📞 Phone</h4>
+                    <p>+91 9934842682</p>
+                </div>
+                <div class="card">
+                    <h4>🕐 Timing</h4>
+                    <p>9:00 AM - 2:30 PM<br>(Monday to Friday)</p>
+                </div>
+            </div>
+
+            <h4 style="color: #1a5490; margin-top: 2rem; text-align: center;">Send us a Message</h4>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-msg">Email *</label>
+                    <input type="email" id="email-msg" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; text-align: center;">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ideal Public School - Muzaffarpur</p>
+        <p>Education is the Key to Success | Building Confident Citizens</p>
+        <p>Contact: 9934842682 | Bishunpur, Mahanand Kanti, Muzaffarpur</p>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for applying! We will contact you soon.');
+            this.reset();
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
